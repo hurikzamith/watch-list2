@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :lists, only: [:create, :new, :index, :show ] do
     resources :bookmarks, only: [ :create, :new, :index ]
   end
+  resources :bookmarks, only: :destroy
 
 end
