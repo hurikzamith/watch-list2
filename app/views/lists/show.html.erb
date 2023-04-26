@@ -1,6 +1,15 @@
-<h1>Show List</h1>
-<%= @list.name %>
+<ul>
+  <h1><%= @list.name %></h1>
+</ul>
 
+<ol>
+
+  <% @list.bookmarks.each do |bookmark| %>
+  <li>
+    <%= bookmark.movie.title %> - <%= bookmark.comment %>
+  </li>
+  <% end %>
+</ol>
 <h2>Add movie to this list</h2>
 
  <%= simple_form_for [@list, @bookmark] do |f| %>

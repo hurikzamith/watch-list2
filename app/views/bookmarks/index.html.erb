@@ -4,6 +4,6 @@
 
 <% @bookmarks.each do |bookmark|%>
   <li><%= bookmark.list.name %> - <%= bookmark.movie.title %> - <%= bookmark.comment %> </li>
-<%# TODO - ADD DELETE BUTTON %>
+  <%= link_to "Delete", bookmark_path(bookmark.id), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
 </ol>
