@@ -1,8 +1,9 @@
 <h1>index bookmarks</h1>
 
 <ol>
-<% @bookmarks.each do |x|%>
-  <li><%= x.comment %></li>
+
+<% @bookmarks.each do |bookmark|%>
+  <li><%= bookmark.list.name %> - <%= bookmark.movie.title %> - <%= bookmark.comment %> </li>
 <%# TODO - ADD DELETE BUTTON %>
 <% end %>
 </ol>
