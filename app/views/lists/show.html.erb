@@ -1,2 +1,9 @@
 <h1>Show List</h1>
 <%= @list.name %>
+
+<h2>Add movie to this list</h2>
+
+<%= form_for @bookmark do |f| %>
+  <%= f.select :movie_id, Movie.all.map { |m| [m.title, m.id] } %>
+  <%= f.submit %>
+<% end %>
